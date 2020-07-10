@@ -264,6 +264,7 @@ Partial Class FrmBolsaSolidaria
         Me.Controls.Add(Me.ListaBolsa)
         Me.Controls.Add(Me.DgvRegistro)
         Me.Controls.Add(Me.GroupBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmBolsaSolidaria"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmBolsaSolidaria"

@@ -1,5 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
-Public Class FormMenu
+Public Class MenuClase
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
     End Sub
@@ -94,8 +94,24 @@ Public Class FormMenu
         Me.PanelForm.Tag = frm
         frm.Show()
     End Sub
-    Private Sub BtnArregloDeVectores_Click(sender As Object, e As EventArgs) Handles BtnArregloDeVectores.Click
-        abrirFormulario(FrmBolsaSolidaria)
 
+    Private Sub BtnArregloDeVectores_Click(sender As Object, e As EventArgs) Handles BtnArregloDeVectores.Click
+        abrirFormulario(frmArreglosVectores)
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        abrirFormulario(frmEmpleados)
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        abrirFormulario(frmEstudiante)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        abrirFormulario(frmLibretaAhorro)
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        abrirFormulario(frmProductos)
     End Sub
 End Class

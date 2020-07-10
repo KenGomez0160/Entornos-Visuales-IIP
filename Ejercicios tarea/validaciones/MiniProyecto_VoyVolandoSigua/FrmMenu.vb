@@ -1,5 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
-Public Class FormMenu
+Public Class FrmMenu
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
     End Sub
@@ -57,13 +57,13 @@ Public Class FormMenu
         End If
     End Sub
 
-    Private Sub PanelForm_Paint(sender As Object, e As PaintEventArgs) Handles PanelForm.Paint
+    Private Sub PanelForm_Paint(sender As Object, e As PaintEventArgs) 
         ocultarSubMenu()
 
     End Sub
     Private Sub ocultarSubMenu()
         PanelSubMenuClase.Visible = False
-
+        PanelSubMenuTarea.Visible = False
     End Sub
     Private Sub MostrarSubMenu(submenu As Panel)
         If submenu.Visible = False Then
@@ -75,14 +75,15 @@ Public Class FormMenu
 
     End Sub
 
-    Private Sub BtnClase_Click(sender As Object, e As EventArgs) Handles BtnClase.Click
+    Private Sub BtnClase_Click(sender As Object, e As EventArgs) Handles BtnRegistrarse.Click
         MostrarSubMenu(PanelSubMenuClase)
 
     End Sub
 
-    Private Sub BtnTareas_Click(sender As Object, e As EventArgs)
-
+    Private Sub BtnTareas_Click(sender As Object, e As EventArgs) Handles BtnBaseDatos.Click
+        MostrarSubMenu(PanelSubMenuTarea)
     End Sub
+
     Private Sub abrirFormulario(ByVal formHijo As Object)
         If PanelForm.Controls.Count > 0 Then
             Me.PanelForm.Controls.RemoveAt(0)
@@ -94,8 +95,7 @@ Public Class FormMenu
         Me.PanelForm.Tag = frm
         frm.Show()
     End Sub
-    Private Sub BtnArregloDeVectores_Click(sender As Object, e As EventArgs) Handles BtnArregloDeVectores.Click
-        abrirFormulario(FrmBolsaSolidaria)
-
+    Private Sub BtnIniciarRegistro_Click(sender As Object, e As EventArgs) Handles BtnIniciarRegistro.Click
+        abrirFormulario(CargandoSistema)
     End Sub
 End Class
